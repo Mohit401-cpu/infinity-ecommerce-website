@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color" content="#f8f7f4">
+    <meta name="description" content="Discover everyday essentials at Infinity, your online shopping destination.">
+
+    <title>Infinity | Endless Possibilities</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Rowdies:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+    <!-- JavaScript -->
+    <script src="{{ url_for('static', filename='js/script.js') }}" defer></script>
+</head>
+
+<body>
+
+    <!-- Announcement Bar -->
+    <div class="announcement">
+        <p>Discover something extraordinary. Welcome to Infinity.</p>
+    </div>
+
+    <!-- Header -->
+    <header class="site-header">
+        <div class="header-inner">
+
+            <a href="#" class="brand" aria-label="Infinity home">
+                <img
+                    src="{{ url_for('static', filename='images/logo.png') }}"
+                    alt="Infinity logo"
+                    class="logo"
+                >
+
+                <span class="brand-name">Infinity<span class="brand-dot">.</span></span>
+            </a>
+
+            <nav class="main-nav" id="mainNav" aria-label="Main navigation">
+                <a href="#" class="nav-link active">Home</a>
+                <a href="#products" class="nav-link">Shop</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </nav>
+
+            <div class="header-actions">
+
+                <button
+                    type="button"
+                    class="icon-button"
+                    id="wishlistToggle"
+                    aria-label="Show wishlist"
+                    title="Wishlist"
+                >
+                    <i class="fa-regular fa-heart"></i>
+                    <span class="icon-count" id="wishlistCount">0</span>
+                </button>
+
+                <button
+                    type="button"
+                    class="icon-button"
+                    id="cartToggle"
+                    aria-label="Open shopping cart"
+                    title="Shopping cart"
+                >
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span class="icon-count" id="cartCount">0</span>
+                </button>
+
+                <button
+                    type="button"
+                    class="menu-toggle"
+                    id="menuToggle"
+                    aria-label="Toggle navigation"
+                    aria-expanded="false"
+                >
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+
+            </div>
+        </div>
+    </header>
+
+
+    <main>
+
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+
+                <span class="eyebrow">
+                    <span class="eyebrow-dot"></span>
+                    YOUR WORLD. YOUR STYLE.
+                </span>
+
+                <h1>
+                    Endless possibilities.<br>
+                    <span>One destination.</span>
+                </h1>
+
+                <p>
+                    Discover thoughtfully selected essentials
+                    that bring more style, comfort, and joy
+                    to your everyday life.
+                </p>
+
+                <a href="#products" class="primary-button">
+                    Explore Collection
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+                <div class="hero-note">
+                    <i class="fa-solid fa-circle-check"></i>
+                    Discover your next favorite thing
+                </div>
+
+            </div>
+
+            <div class="hero-visual">
+                <div class="hero-circle"></div>
+
+                <div class="hero-decoration decoration-one">∞</div>
+                <div class="hero-decoration decoration-two">✳</div>
+
+                <div class="hero-product hero-product-one">
+                    <img
+                        src="{{ url_for('static', filename='images/headphones.png') }}"
+                        alt="Wireless headphones"
+                    >
+                    <span>Sound, reimagined.</span>
+                </div>
+
+                <div class="hero-product hero-product-two">
+                    <img
+                        src="{{ url_for('static', filename='images/smartwatch.png') }}"
+                        alt="Modern smartwatch"
+                    >
+                </div>
+
+                <div class="floating-badge">
+                    <span>∞</span>
+                    <div>
+                        <strong>Infinity</strong>
+                        <small>Find your next favorite</small>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Benefits -->
+        <section class="benefits" aria-label="Shopping benefits">
+
+            <div class="benefit">
+                <span class="benefit-icon">
+                    <i class="fa-solid fa-box-open"></i>
+                </span>
+                <div>
+                    <h3>Curated Finds</h3>
+                    <p>Products worth discovering</p>
+                </div>
+            </div>
+
+            <div class="benefit">
+                <span class="benefit-icon">
+                    <i class="fa-solid fa-heart"></i>
+                </span>
+                <div>
+                    <h3>Made for You</h3>
+                    <p>Everyday inspiration</p>
+                </div>
+            </div>
+
+            <div class="benefit">
+                <span class="benefit-icon">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+                </span>
+                <div>
+                    <h3>Simple Shopping</h3>
+                    <p>A smooth browsing experience</p>
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- Products Section -->
+        <section class="products-section" id="products">
+
+            <div class="section-heading">
+                <div>
+                    <span class="section-kicker">THE INFINITY EDIT</span>
+                    <h2>Find your <span>favorites.</span></h2>
+                    <p>Everyday essentials. Extraordinary discoveries.</p>
+                </div>
+
+                <span class="product-total" id="productTotal">
+                    3 products
+                </span>
+            </div>
+
+
+            <!-- Search and Filters -->
+            <div class="shop-toolbar">
+
+                <label class="search-box">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                    <input
+                        type="search"
+                        id="searchInput"
+                        placeholder="Search products..."
+                        aria-label="Search products"
+                    >
+
+                    <button
+                        type="button"
+                        class="clear-search"
+                        id="clearSearch"
+                        aria-label="Clear search"
+                        hidden
+                    >
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </label>
+
+                <div class="toolbar-right">
+
+                    <button
+                        type="button"
+                        class="filter-button"
+                        id="allProductsButton"
+                    >
+                        All products
+                    </button>
+
+                    <button
+                        type="button"
+                        class="filter-button"
+                        id="wishlistFilterButton"
+                    >
+                        <i class="fa-regular fa-heart"></i>
+                        Wishlist
+                    </button>
+
+                    <label class="sort-control">
+                        <span>Sort:</span>
+
+                        <select id="sortSelect" aria-label="Sort products">
+                            <option value="featured">Featured</option>
+                            <option value="price-low">Price: Low to high</option>
+                            <option value="price-high">Price: High to low</option>
+                            <option value="name">Name: A to Z</option>
+                        </select>
+                    </label>
+
+                </div>
+            </div>
+
+
+            <!-- JavaScript inserts product cards here -->
+            <div class="product-grid" id="productGrid"></div>
+
+            <div class="empty-state" id="emptyState" hidden>
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <h3>No products found</h3>
+                <p>Try a different search or browse all products.</p>
+
+                <button type="button" class="primary-button" id="resetProducts">
+                    Show all products
+                </button>
+            </div>
+
+        </section>
+
+
+        <!-- About Section -->
+        <section class="about-section" id="about">
+
+            <div class="about-symbol">∞</div>
+
+            <div class="about-content">
+                <span class="section-kicker">A LITTLE ABOUT US</span>
+
+                <h2>Life is better with <span>possibilities.</span></h2>
+
+                <p>
+                    At Infinity, we believe the little things can make
+                    a big difference. Our goal is to help you discover
+                    products that make everyday living more enjoyable.
+                </p>
+
+                <a href="#products" class="text-link">
+                    Discover the collection
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+
+        </section>
+
+
+        <!-- Newsletter -->
+        <section class="newsletter">
+
+            <div>
+                <span class="section-kicker">STAY IN THE LOOP</span>
+                <h2>A little inspiration, <span>delivered.</span></h2>
+                <p>Join our newsletter for updates and new discoveries.</p>
+            </div>
+
+            <form id="newsletterForm" class="newsletter-form">
+
+                <label for="emailInput" class="visually-hidden">
+                    Email address
+                </label>
+
+                <input
+                    type="email"
+                    id="emailInput"
+                    placeholder="Enter your email address"
+                    required
+                >
+
+                <button type="submit" class="primary-button">
+                    Subscribe
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+
+            </form>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="site-footer" id="contact">
+
+        <div class="footer-top">
+
+            <div class="footer-brand">
+                <a href="#" class="brand">
+                    <img
+                        src="{{ url_for('static', filename='images/logo.png') }}"
+                        alt=""
+                        class="logo"
+                    >
+                    <span class="brand-name">
+                        Infinity<span class="brand-dot">.</span>
+                    </span>
+                </a>
+
+                <p>Your finite stop for infinite shopping possibilities.</p>
+            </div>
+
+            <div class="footer-column">
+                <h3>Explore</h3>
+                <a href="#products">Shop products</a>
+                <a href="#about">Our story</a>
+                <a href="#products">Discover favorites</a>
+            </div>
+
+            <div class="footer-column">
+                <h3>Get in touch</h3>
+                <a href="mailto:support@example.com">
+                    support@example.com
+                </a>
+                <a href="#contact">Contact us</a>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Infinity. All rights reserved.</p>
+            <p>Made for endless possibilities. ∞</p>
+        </div>
+
+    </footer>
+
+
+    <!-- Product Details Modal -->
+    <div
+        class="modal-backdrop"
+        id="productModal"
+        hidden
+    >
+        <div
+            class="product-modal"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="modalTitle"
+        >
+            <button
+                type="button"
+                class="modal-close"
+                id="modalClose"
+                aria-label="Close product details"
+            >
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div class="modal-content" id="modalContent"></div>
+        </div>
+    </div>
+
+
+    <!-- Shopping Cart Drawer -->
+    <div class="cart-backdrop" id="cartBackdrop" hidden></div>
+
+    <aside
+        class="cart-drawer"
+        id="cartDrawer"
+        aria-label="Shopping cart"
+        aria-hidden="true"
+        inert
+    >
+        <div class="cart-header">
+            <div>
+                <span class="section-kicker">YOUR SELECTION</span>
+                <h2>Your Cart <span id="cartTitleCount">(0)</span></h2>
+            </div>
+
+            <button
+                type="button"
+                class="icon-button"
+                id="cartClose"
+                aria-label="Close shopping cart"
+            >
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+
+        <div class="cart-items" id="cartItems"></div>
+
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Subtotal</span>
+                <strong id="cartSubtotal">₹0</strong>
+            </div>
+
+            <p class="cart-note">
+                This is a demonstration cart. No payment is processed.
+            </p>
+
+            <button
+                type="button"
+                class="primary-button checkout-button"
+                id="checkoutButton"
+            >
+                Checkout
+                <i class="fa-solid fa-arrow-right"></i>
+            </button>
+        </div>
+    </aside>
+
+
+    <!-- Toast Notifications -->
+    <div
+        class="toast"
+        id="toast"
+        role="status"
+        aria-live="polite"
+    ></div>
+
+</body>
+</html>
